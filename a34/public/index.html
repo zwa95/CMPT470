@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <!-- <input type="submit" class="btn btn-primary" value="Submit [Enter]" /> -->
-                <input type="button" class="btn btn-primary" value="Create" onclick="create_user()"/>
+                <input type="button" class="btn btn-primary" value="Create" onclick="create_user()" />
                 <input type="button" class="btn btn-secondary" value="Roll the dice!" onclick="randomize()" />
             </form>
         </div>
@@ -48,7 +48,8 @@
         <div class="card-header">Update User</div>
         <div class="card-body">
             <form>
-                <input type="text" class="form-control" placeholder="User ID [Required]" id="update-uid" name="uid" /><br>
+                <input type="text" class="form-control" placeholder="User ID [Required]" id="update-uid"
+                    name="uid" /><br>
                 <hr><br>
                 <input type="text" class="form-control" placeholder="Name" id="update-name" name="name" /></br>
                 <input type="email" class="form-control" placeholder="Email" id="update-email" name="email" /><br />
@@ -60,7 +61,7 @@
                         <span class="input-group-text">/4.33</span>
                     </div>
                 </div>
-                <input type="button" class="btn btn-primary" value="Update" onclick="update_user()"/>
+                <input type="button" class="btn btn-primary" value="Update" onclick="update_user()" />
                 <input type="button" class="btn btn-secondary" value="Load User by ID" onclick="load_user()" />
             </form>
         </div>
@@ -70,7 +71,7 @@
         <div class="card-body">
             <form>
                 <input type="text" class="form-control" placeholder="User ID" id="delete-uid" name="uid" /></br>
-                <input type="button" class="btn btn-danger" value="Delete" onclick="delete_user()"/>
+                <input type="button" class="btn btn-danger" value="Delete" onclick="delete_user()" />
             </form>
         </div>
     </div>
@@ -80,7 +81,7 @@
             Current Users
             <input type="button" class="btn-sm btn-success" value="Refresh" id="refresh" onclick="refresh_users()" />
         </div>
-        
+
         <div class="card-body">
             <table class="table">
                 <thead>
