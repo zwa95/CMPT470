@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CMPT470 Assignment 3/4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+</head>
+
+<body onload="refresh_users()">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="">Manage Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/show">Visualization</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="card">
+        <div class="card-header">Add User</div>
+        <div class="card-body">
+            <form>
+                <input type="text" class="form-control" placeholder="Name" id="create-name" name="name" /></br>
+                <input type="email" class="form-control" placeholder="Email" id="create-email" name="email" /><br />
+                <input type="number" class="form-control" placeholder="Age" id="create-age" name="age" /><br />
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="GPA" id="create-gpa" step="0.01" min="0.0"
+                        max="4.33" name="gpa" /><br />
+                    <div class="input-group-append">
+                        <span class="input-group-text">/4.33</span>
+                    </div>
+                </div>
+                <!-- <input type="submit" class="btn btn-primary" value="Submit [Enter]" /> -->
+                <input type="button" class="btn btn-primary" value="Create" onclick="create_user()"/>
+                <input type="button" class="btn btn-secondary" value="Roll the dice!" onclick="randomize()" />
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">Update User</div>
+        <div class="card-body">
+            <form>
+                <input type="text" class="form-control" placeholder="User ID [Required]" id="update-uid" name="uid" /><br>
+                <hr><br>
+                <input type="text" class="form-control" placeholder="Name" id="update-name" name="name" /></br>
+                <input type="email" class="form-control" placeholder="Email" id="update-email" name="email" /><br />
+                <input type="number" class="form-control" placeholder="Age" id="update-age" name="age" /><br />
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="GPA" id="update-gpa" step="0.01" min="0.0"
+                        max="4.33" name="gpa" /><br />
+                    <div class="input-group-append">
+                        <span class="input-group-text">/4.33</span>
+                    </div>
+                </div>
+                <input type="button" class="btn btn-primary" value="Update" onclick="update_user()"/>
+                <input type="button" class="btn btn-secondary" value="Load User by ID" onclick="load_user()" />
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">Delete User</div>
+        <div class="card-body">
+            <form>
+                <input type="text" class="form-control" placeholder="User ID" id="delete-uid" name="uid" /></br>
+                <input type="button" class="btn btn-danger" value="Delete" onclick="delete_user()"/>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Current Users
+            <input type="button" class="btn-sm btn-success" value="Refresh" id="refresh" onclick="refresh_users()" />
+        </div>
+        
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>GPA</th>
+                    </tr>
+                </thead>
+                <tbody id="user_table">
+                    <tr>
+                        <td colspan="5">Please refresh the list</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
